@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/zongdaoming/Documents/pavc_reasoner_code/pavc_reasoner/codes/fork",
+      "program": "/Users/zongdaoming/Documents/pavc_reasoner_code/pavc_reasoner/codes/fork/build/Debug/outDebug"
+    }
+  ]
+}

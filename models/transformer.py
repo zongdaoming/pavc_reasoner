@@ -49,7 +49,6 @@ class ClassificationTransformer(nn.Module):
         ##############################################################################
         ##############################################################################
         #                               END OF YOUR CODE                             #
-        self.multi_head_attention = nn.MultiHeadAttention(self.num_heads, self.dim_k, self.dim_v)
         # self.multi_head_attention = self.multi_head_attention(self.num_heads, self.dim_k, self.dim_v)
         ##############################################################################
         ##############################################################################
@@ -95,7 +94,7 @@ class ClassificationTransformer(nn.Module):
         # pre-norm
         src = self.norm1(src)
         src2 = self.droput1(src)
-        src2 = self.multi_head_attention(q,k,value=src)
+        src2 = self.multi_head_attention(src2)
         # add & norm
         src = src + src2
         src = self.norm2(src)
@@ -147,6 +146,14 @@ class ClassificationTransformer(nn.Module):
         #############################################################################
         ##############################################################################
         #                               END OF YOUR CODE                             #
+        src = src 
+        q = self.linear_w_q(src)
+        k = 
+        v = 
+        attention_score = q@k
+        attention_score = torch.softmax(attention_score, dim=1)
+        outputs = attention_score@v
+        
         ##############################################################################
         return outputs
     def final_layer(self, inputs):
