@@ -4,7 +4,6 @@
 #include <stack>
 using namespace std;
 //Definition for a binary tree node.
-
 struct TreeNode{
     int val;
     TreeNode* left;
@@ -123,7 +122,7 @@ vector<vector<int>> levelOrder(TreeNode* root){
 }
 
 int main(){
-    cout<<"Test"<<endl;
+    cout<<"Test "<<endl;
     return 0;
 }
 
