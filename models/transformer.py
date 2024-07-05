@@ -42,34 +42,28 @@ class ClassificationTransformer(nn.Module):
         ##############################################################################
         ##############################################################################
         #                               END OF YOUR CODE                             #
-        self.embedding = nn.Embedding(self.vocab_size, self.word_embedding_dim)
+        
         ##############################################################################
         ##############################################################################
         # Deliverable 2: Initializations for multi-head self-attention.              #
         ##############################################################################
         ##############################################################################
         #                               END OF YOUR CODE                             #
-        # self.multi_head_attention = self.multi_head_attention(self.num_heads, self.dim_k, self.dim_v)
+
         ##############################################################################
         ##############################################################################
         # Deliverable 3: Initialize what you need for the feed-forward layer.        #
         ##############################################################################
         ##############################################################################
         #                               END OF YOUR CODE                             #
-        self.ffn1 = nn.Linear(self.hidden_dim, self.dim_feedforward)
-        self.ffn2 = nn.Linear(self.dim_feedforward, self.hidden_dim)
-        # self.ffn= self.feedforward_layer(self.hidden_dim, self.dim_feedforward)
+
         ##############################################################################
         ##############################################################################
         # Deliverable 4: Initialize what you need for the final layer (1-2 lines).   #
         ##############################################################################
         ##############################################################################
-        self.droput1 = nn.Dropout()
-        self.droput2 = nn.Dropout()
-        
-        self.norm1 = nn.LayerNorm(self.hidden_dim)
-        self.norm2 = nn.LayerNorm(self.hidden_dim)
-        self.activation = nn.ReLU()
+        #                               END OF YOUR CODE                             #
+
         
         
         ##############################################################################
@@ -88,17 +82,7 @@ class ClassificationTransformer(nn.Module):
         #############################################################################
         ##############################################################################
         #                               END OF YOUR CODE                             #
-        src = inputs
-        src = self.embedding(src)
-        q=k=self.with_pos_embed(src,pos)
-        # pre-norm
-        src = self.norm1(src)
-        src2 = self.droput1(src)
-        src2 = self.multi_head_attention(src2)
-        # add & norm
-        src = src + src2
-        src = self.norm2(src)
-        outputs = self.ffn2(self.droput2(self.activation(self.ffn1(src))))
+
         ##############################################################################
         return outputs
     
@@ -146,13 +130,7 @@ class ClassificationTransformer(nn.Module):
         #############################################################################
         ##############################################################################
         #                               END OF YOUR CODE                             #
-        src = src 
-        q = self.linear_w_q(src)
-        k = 
-        v = 
-        attention_score = q@k
-        attention_score = torch.softmax(attention_score, dim=1)
-        outputs = attention_score@v
+    
         
         ##############################################################################
         return outputs

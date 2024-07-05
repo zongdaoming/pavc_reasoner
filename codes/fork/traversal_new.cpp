@@ -29,6 +29,8 @@ vector<int> preorderTraversal(TreeNode * root){
     return res;
 }
 
+
+
 // 中序遍历（非递归）
 vector<int> inorderTraversal(TreeNode * root,vector<int> &res){
     if(root == NULL) return;
@@ -45,7 +47,8 @@ vector<int> inorderTraversal(TreeNode * root,vector<int> &res){
         node = node->right;
     }
     return res;
-}
+
+
 
 // 后序遍历（非递归）
 vector<int> postorderTraversal(TreeNode* root){
